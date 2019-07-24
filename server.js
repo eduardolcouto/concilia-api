@@ -2,11 +2,13 @@ const express = require('express')
 const mongoose = require('mongoose')
 const requireDir = require('require-dir')
 const cors = require('cors')
+const bodyParse = require('body-parser')
 
 //iniciando o app
 const app = express()
 app.use(express.json())
 app.use(cors())
+app.use(bodyParse.json())
 
 //iniciando o banco
 mongoose.connect('mongodb://localhost:27017/conciliaapi',{useNewUrlParser: true})
