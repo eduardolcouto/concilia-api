@@ -16,7 +16,7 @@ module.exports = {
         return res.json(product)
     },
     async store(req, res){
-        
+        console.log('body',req.body)
         const product = await Product.create(req.body)
 
         return res.json(product)
